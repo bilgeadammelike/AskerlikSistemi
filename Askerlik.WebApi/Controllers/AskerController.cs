@@ -11,9 +11,14 @@ namespace Askerlik.WebApi.Controllers
     {
         [HttpPost]
         [Authorize] //Authorize attribute token olmayanların erişimini engeller
-        public List<MyData> Post()
+        public List<string> Post()
         {
-            return new List<MyData> { new MyData() { Name = "Test1" }, new MyData() { Name = "Test2" }, new MyData() { Name = "Tes3" } };
+            List<string> list = new List<string>() {
+                "asdaa",
+                "asda"
+            };
+            return list;
+            //return new List<MyData> { new MyData() { Name = "Test1" }, new MyData() { Name = "Test2" }, new MyData() { Name = "Tes3" } };
         }
     }
 }
