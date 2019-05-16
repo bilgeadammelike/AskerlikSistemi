@@ -9,8 +9,21 @@ namespace Askerlik.WebApi.Controllers
 {
     public class AskerController : ApiController
     {
+        [HttpGet]
+        [Authorize]
+        public List<Askerlik.Core.Asker> Get()
+        {
+            List<Askerlik.Core.Asker> askr;
+            using (Askerlik.Core.AskerlikDbEntities db = new Core.AskerlikDbEntities())
+            {
+                askr = db.Asker.ToList();
+            }
+            return askr;
+        }
+
         [HttpPost]
         [Authorize] //Authorize attribute token olmayanların erişimini engeller
+        [ActionName("AskerAl")]
         public List<string> Post()
         {
             List<string> list = new List<string>() {
@@ -23,7 +36,7 @@ namespace Askerlik.WebApi.Controllers
 
         [HttpPost]
         [Authorize] //Authorize attribute token olmayanların erişimini engeller
-        //public IHttpActionResult Post([FromBody]Shippers s)
+        [ActionName("AskerEkle")]
         public IHttpActionResult Post([FromBody] Askerlik.Core.Asker askr)
         {
             try
@@ -42,7 +55,7 @@ namespace Askerlik.WebApi.Controllers
             }
             catch (Exception)
             {
-                throw;
+                return BadRequest();
             }
         }
     }

@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        WebKontrol webapi = new WebKontrol();
         public Form1()
         {
             InitializeComponent();
@@ -48,6 +49,18 @@ namespace WindowsFormsApp1
             
             //   ServiceReference1.KPSPublicSoapClient client = new ServiceReference1.KPSPublicSoapClient();
             //bool hede=   client.TCKimlikNoDogrula(12345678910, "melike", "memis", 1989);
+        }
+
+        private void btnGetToken_Click(object sender, EventArgs e)
+        {
+            Token tToken = webapi.GetToken(txtTokenUrl.Text, txtTokenKullaniciAdi.Text, txtTokenSifre.Text);
+            txtToken.Text = tToken.access_token;
+            txtExpire.Text = tToken.expires_in.ToString();
+        }
+
+        private void btnGetAsker_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

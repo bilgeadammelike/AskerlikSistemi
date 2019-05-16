@@ -13,6 +13,12 @@ namespace Askerlik.WebApi
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            
+            config.Routes.MapHttpRoute(
+                name: "API Default",
+                routeTemplate: "api/{controller}/{action}/{id}",
+                defaults: new { controller="Asker", id = RouteParameter.Optional }
+            );
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

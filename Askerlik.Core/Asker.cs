@@ -12,7 +12,8 @@ namespace Askerlik.Core
     public class Asker
     {
         [Key]
-        public Guid Id { get; set; }
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public Nullable<Guid> Id { get; set; }
 
         public string Name { get; set; }
 

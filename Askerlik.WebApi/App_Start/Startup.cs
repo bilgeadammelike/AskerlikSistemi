@@ -24,7 +24,7 @@ namespace Askerlik.WebApi.App_Start
             OAuthAuthorizationServerOptions oAuthAuthorizationServerOptions = new OAuthAuthorizationServerOptions()
             {
                 TokenEndpointPath = new Microsoft.Owin.PathString("/token"), // token path belirtiyoruz
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                AccessTokenExpireTimeSpan = TimeSpan.FromHours(1),
                 AllowInsecureHttp = true,
                 Provider = new SimpleAuthorizationServerProvider()
             };
