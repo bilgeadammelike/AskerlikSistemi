@@ -22,9 +22,21 @@ namespace Askerlik.WebApi.App_Start
             //response header'a gelen tüm istekleri kabul etmek için
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            AskerlikDbEntities db = new AskerlikDbEntities();
-            //Askerlik.Core.Kisiler kisi = db.Kisiler.Where(a => a.Sifre == context.Password && a.KullaniciAdi == context.UserName).SingleOrDefault();
-            bool fOk = db.Kisiler.Select(a => a.Sifre == context.Password && a.KullaniciAdi == context.UserName).SingleOrDefault();
+            string hashPassWord = Askerlik.WebApi.Models.HashHelper.EncodePasswordMd5(context.Password);
+
+            bool fOk = false;
+            try
+            {
+                AskerlikDbEntities db = new AskerlikDbEntities();
+                //Askerlik.Core.Kisiler kisi = db.Kisiler.Where(a => a.Sifre == context.Password && a.KullaniciAdi == context.UserName).SingleOrDefault();
+                fOk = db.Kisiler.Select(a => a.Sifre == hashPassWord && a.KullaniciAdi == context.UserName).SingleOrDefault();
+            }
+            catch (Exception)
+            {
+                fOk = false;
+                Console.WriteLine("Veritabanına Erişilemedi...");
+            }
+            
 
             if ( (fOk ==true) || (context.UserName == "test" && context.Password == "123"))
             {

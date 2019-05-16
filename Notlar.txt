@@ -1,0 +1,13 @@
+POSTMAN de
+Body GET http://localhost:51563/token
+[
+	{"key":"grant_type","value":"password","description":"","type":"text","enabled":true},
+	{"key":"username","value":"kkkk","description":"","type":"text","enabled":true},
+	{"key":"password","value":"123456","description":"","type":"text","enabled":true}
+]
+
+Header POST http://localhost:51563/api/Asker
+[
+	{"key":"Content-Type","value":"application/json","description":"","type":"text","enabled":true},
+	{"key":"Authorization","value":"Bearer t9fCkNePeY8uFYPJSShE5UpNjnshpAQ4o7Yftk1qof6wDZAftK7Lpv8wfiXmR7AR-DB2htvuoMsv682qgT-jtb5sYJl68yftlf6rzfuOSvqXSFis0WV2hd2okdDCdXCq5KPKsbAbj87uZWfEf4CHeYQ3fllQy9QiNe3M0xVuvuQqYYuzUf88HFPE_9RBCpvVDZJAGYQaz_icK4dSXPyNFutjg0ZjVh_ImI9OHvtfQpI","description":"","type":"text","enabled":true}
+]

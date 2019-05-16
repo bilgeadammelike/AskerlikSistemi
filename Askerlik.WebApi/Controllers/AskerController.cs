@@ -20,5 +20,30 @@ namespace Askerlik.WebApi.Controllers
             return list;
             //return new List<MyData> { new MyData() { Name = "Test1" }, new MyData() { Name = "Test2" }, new MyData() { Name = "Tes3" } };
         }
+
+        [HttpPost]
+        [Authorize] //Authorize attribute token olmayanların erişimini engeller
+        //public IHttpActionResult Post([FromBody]Shippers s)
+        public IHttpActionResult Post([FromBody] Askerlik.Core.Asker askr)
+        {
+            try
+            {
+                if (askr == null)
+                {
+                    return BadRequest();
+                }
+
+                using (Askerlik.Core.AskerlikDbEntities db = new Askerlik.Core.AskerlikDbEntities())
+                {
+                    db.Asker.Add(askr);
+                    db.SaveChanges();
+                }
+                return Ok();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
