@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Askerlik.Core", "Askerlik.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{F47ADBFD-82C5-47B5-BF16-79843CE379A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Askerlik.WebApi", "Askerlik.WebApi\Askerlik.WebApi.csproj", "{DE7DE8E0-6198-4F1E-A54F-2553B9DD75A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F47ADBFD-82C5-47B5-BF16-79843CE379A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F47ADBFD-82C5-47B5-BF16-79843CE379A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F47ADBFD-82C5-47B5-BF16-79843CE379A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7DE8E0-6198-4F1E-A54F-2553B9DD75A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7DE8E0-6198-4F1E-A54F-2553B9DD75A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7DE8E0-6198-4F1E-A54F-2553B9DD75A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7DE8E0-6198-4F1E-A54F-2553B9DD75A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

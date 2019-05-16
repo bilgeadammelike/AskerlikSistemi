@@ -14,6 +14,7 @@ namespace Askerlik.Core
 
        
         public virtual DbSet<Kisla> Kisla{ get; set; }
+        public virtual DbSet<Kisiler> Kisiler { get; set; }
         public virtual DbSet<Asker> Asker { get; set; }
     }
 

@@ -22,7 +22,11 @@ namespace Askerlik.Core
         [StringLength(60)]
         [Display(Name = "Ad soyad")]
         public string Adi { get; set; }
-                       
+
+        public string KullaniciAdi { get; set; }
+
+        public string Sifre { get; set; }
+
         [Display(Name = "Doğum Tarihi")]
         [Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime DogumTarihi { get; set; }
