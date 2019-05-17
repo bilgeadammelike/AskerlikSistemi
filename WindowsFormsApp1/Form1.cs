@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
 
         private void btnGetAsker_Click(object sender, EventArgs e)
         {
-
+            webapi.GetToken(txtTokenUrl.Text, txtToken.Text);
         }
     }
 }
